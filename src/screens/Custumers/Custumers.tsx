@@ -64,7 +64,7 @@ export default function CustumersScreen( ) {
           ? <><span>{data.error}</span></>
           : data.data.length
           ? <>
-              <h1>Meus clientes</h1>
+              <h1>Meus clientes ( {data.data.length} )</h1>
               
               <br />
 

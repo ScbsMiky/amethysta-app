@@ -8,6 +8,8 @@ import CustumersScreen from "./screens/Custumers/Custumers";
 import CustumerEditorScreen from "./screens/CustumerEditor/CustumerEditor";
 import CustumerCreatorScreen from "./screens/CustumerCreator/CustumerCreator";
 
+import TrainsScreen from "./screens/Trains/Trains";
+
 export default function App( ) {
   return (
     <Container>
@@ -17,6 +19,8 @@ export default function App( ) {
           <Route path="/custumers" element={<CustumersScreen />} />
           <Route path="/custumers/editor" element={<CustumerEditorScreen />} />
           <Route path="/custumers/creator" element={<CustumerCreatorScreen />} />
+
+          <Route path="/trains" element={<TrainsScreen />} />
           
           <Route path="*" element={<NotFoundScreen />} />
         </Routes>

@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const NotFoundStyled = styled.div`
+export const TrainsStyled = styled.div`
   height: 100%;
   
   display: flex;
