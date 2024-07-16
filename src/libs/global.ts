@@ -1,5 +1,5 @@
 export module Global {
-  export const API = "https://abrasive-persistent-taurus.glitch.me/";
+  export const API = "https://gym-management.glitch.me";
 
   export type PaymentProps = {
     id: string;

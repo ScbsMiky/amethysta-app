@@ -16,7 +16,7 @@ export default function useRequest<T>(options: Request.RequestOptions & { initia
 
   const [loading, setLoading] = useState(true);
 
-  const handleFetch = (options: Request.RequestOptions) => {
+  const handleFetch = async (options: Request.RequestOptions) => {
     setError("");
     setLoading(true);
 
@@ -28,7 +28,9 @@ export default function useRequest<T>(options: Request.RequestOptions & { initia
       };
 
       setData(data);
-    }).catch((error) => setError(error.message)).finally(( ) => setLoading(false));
+    }).catch((error) => {
+      setError(error.message);
+    }).finally(( ) => setLoading(false));
   };
   
   useEffect(( ) => {
