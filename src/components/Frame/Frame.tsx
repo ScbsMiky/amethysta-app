@@ -3,14 +3,24 @@ import { useRef } from "react";
 import { IFrame } from "./types";
 
 import { FrameStyled } from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import { Global } from "../../libs/global";
 
 export default function Frame(props: IFrame) {
+  const nav = useNavigate( );
+
   const menuRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleSave = ( ) => {
+    if(inputRef.current && inputRef.current.value) {
+      window.localStorage.setItem("authorization", inputRef.current.value);
+      
+      nav(0);
+    };
+  };
 
   return (
     <FrameStyled>
@@ -44,7 +54,7 @@ export default function Frame(props: IFrame) {
         <div className="content">          
           <Input ref={inputRef} value={Global.GetAuthorization( ) || ""} label="Chave de Acesso" />
           
-          <Button onClick={( ) => (inputRef.current && inputRef.current.value) ? window.localStorage.setItem("authorization", inputRef.current.value) : undefined} center>
+          <Button onClick={handleSave} center>
             <span>Salvar</span>
           </Button>
         </div>
